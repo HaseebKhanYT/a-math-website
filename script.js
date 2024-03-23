@@ -1,8 +1,8 @@
 let answer = document.getElementById("answer");
 
-let addNumbers = () => {
-  let num1 = parseFloat(document.getElementById("add-input-1").value);
-  let num2 = parseFloat(document.getElementById("add-input-2").value);
+let calculate = (choice) => {
+  let num1 = parseFloat(document.getElementById("input-1").value);
+  let num2 = parseFloat(document.getElementById("input-2").value);
 
   if (isNaN(num1) || isNaN(num2)) {
     alert("Please enter a valid number");
@@ -10,22 +10,17 @@ let addNumbers = () => {
   }
 
   let sum = num1 + num2;
-  console.log(sum);
-
-  answer.innerText = sum;
-};
-
-let multiplyNumbers = () => {
-  let num1 = parseFloat(document.getElementById("mul-input-1").value);
-  let num2 = parseFloat(document.getElementById("mul-input-2").value);
-
-  if (isNaN(num1) || isNaN(num2)) {
-    alert("Please enter valid numbers");
-    return;
-  }
-
   let product = num1 * num2;
-  console.log(product);
+  let quotient = num1 / num2;
+  let difference = num1 - num2;
 
-  answer.innerText = product;
+  if (choice == 0) {
+    answer.innerText = sum;
+  } else if (choice == 1) {
+    answer.innerText = product;
+  } else if (choice == 2) {
+    answer.innerText = quotient;
+  } else if (choice == 3) {
+    answer.innerText = difference;
+  }
 };
